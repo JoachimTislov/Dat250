@@ -15,7 +15,6 @@ CREATE TABLE [Users] (
   first_name VARCHAR,
   last_name VARCHAR,
   [password] VARCHAR,
-  login_attempts INTEGER DEFAULT 0,
   education VARCHAR DEFAULT 'Unknown',
   employment VARCHAR DEFAULT 'Unknown',
   music VARCHAR DEFAULT 'Unknown',

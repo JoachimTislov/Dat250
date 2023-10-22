@@ -38,12 +38,8 @@ def index():
             flash("Sorry, this user does not exist!", category="warning")
         elif user["password"] != login_form.password.data:
             flash("Sorry, wrong password!", category="warning")
-            user.login_attempts += 1
-        elif user["password"] == login_form.password.data and user.login_attempts < 3:
-            user.login_attempts = 0
+        elif user["password"] == login_form.password.data:
             return redirect(url_for("stream", username=login_form.username.data))
-        else:
-            flash("Sorry, you have been locked out!", category="warning")
 
     elif register_form.is_submitted() and register_form.submit.data:
         insert_user = f"""
